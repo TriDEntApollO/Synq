@@ -16,7 +16,7 @@ func main() {
 	// Check for what command has been passed
 	switch command := os.Args[1]; command {
 	case "help":
-		fmt.Println("synq is a simple git implementation")
+		commands.Help(os.Args)
 
 	case "init":
 		commands.SynqInit(os.Args)
@@ -28,7 +28,7 @@ func main() {
 		commands.HashObject(os.Args)
 
 	default:
-		fmt.Fprintf(os.Stderr, "error: unknown command '%s'\n", command)
+		fmt.Fprintf(os.Stderr, "synq: '%s' is not a valid command. See 'synq help' for more info.\n", command)
 		os.Exit(1)
 	}
 }

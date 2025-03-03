@@ -11,6 +11,16 @@ import (
 	"strings"
 )
 
+func Help(Args []string) {
+	fmt.Println("usage: synq <command> [<args>...]")
+	fmt.Println()
+	fmt.Println("The most commonly used synq commands are:")
+	fmt.Println("   init           Initialize a new git repository or reinitialize an existing one")
+	fmt.Println("   cat-file       Show various types of objects")
+	fmt.Println("   hash-object    Create a blob object from a file")
+	fmt.Println()
+	fmt.Println("For more information on any of these commands, run 'synq help <command>'.")
+}
 func SynqInit(osArgs []string) {
 	dirsToCreate := []string{".git", ".git/hooks", ".git/info", ".git/objects", ".git/refs", ".git/refs/heads", ".git/refs/tags"}
 	headFileContents := []byte("ref: refs/heads/main\n")
