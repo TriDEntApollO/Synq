@@ -27,6 +27,9 @@ func main() {
 	case "hash-object":
 		commands.HashObject(os.Args)
 
+	case "ls-tree":
+		commands.LsTree(os.Args)
+
 	default:
 		fmt.Fprintf(os.Stderr, "synq: '%s' is not a valid command. See 'synq help' for more info.\n", command)
 		os.Exit(1)
